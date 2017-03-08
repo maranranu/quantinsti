@@ -1,0 +1,57 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ANGULAR MODULE -->
+<html ng-app="ExchangeOrderApp">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Quantinsti</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #orders                 { margin-bottom:100px; }
+    </style>
+
+    <!-- SPELLS -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL ORDERS -->
+<body ng-controller="mainController">
+        <!-- HEADER -->
+        <div class="jumbotron text-center">
+            <h1>Application to check instrument status</h1>
+        </div>
+        <!-- ORDER LIST -->
+        <div id="orders" class="row">
+                <!-- LOOP OVER THE orders IN $scope.orders -->
+                  <ul>
+                    <li ng-repeat="order in orders">
+                          <input type="text-center" value ="{{order.size}} units of an instrument with the id {{order.instrument}} was {{order.status}}">
+                        <!--  <button type="submit" class="btn btn-small btn-primary" ng-click="getStatusByID(order.instrument)">Instrument {{order.instrument}} data</button> -->
+                    </li>
+                  </ul>
+        </div>
+
+        <!-- FORM TO STORE LINE  DATA -->
+        <div id="order-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+                        <!-- BIND THIS VALUE TO formData.line IN ANGULAR -->
+                        <input type="text" class="form-control input-lg text-center" placeholder="Enter line" ng-model="formData.line">
+                    </div>
+                    <!-- storeOrder() WILL save new entry into data after parsing line -->
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="storeOrder()">Save new order</button>
+                </form>
+            </div>
+        </div>
+</body>
+</html>
