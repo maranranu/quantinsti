@@ -18,7 +18,7 @@ app.use(connection(mysql,{
   host     : 'localhost',
   user     : 'root',
   password : 'admin123',
-  database : 'quantinsti'
+  database : 'quantinsti_assignment'
 },'request')
 );
 
