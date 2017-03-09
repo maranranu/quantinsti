@@ -28,7 +28,7 @@ Installation
 
 * Run automated shell script and provide your mysql credential when prompted
 ```bash
-sudo ./run.sh
+./run.sh
 ```
 
 It will automatically do the following tasks

@@ -7,6 +7,7 @@ var express = require('express');
 var mysql = require('mysql');
 var bodyParser = require('body-parser');
 var connection  = require('express-myconnection');
+var config = require('./config.json');
 
 var app = express();
 /**
@@ -16,8 +17,8 @@ Include file
 //MySQL connection setup
 app.use(connection(mysql,{
   host     : 'localhost',
-  user     : 'root',
-  password : 'admin123',
+  user     : config.username,
+  password : config.password,
   database : 'quantinsti_assignment'
 },'request')
 );
