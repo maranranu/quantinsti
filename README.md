@@ -1,8 +1,12 @@
 # Quantinsti MEAN Stack assignment
 
-Name: Kamnee Maran
+### Personal Details
 
-Email: kamneemaran45@gmail.com
+|          |                               |
+|----------|-------------------------------|
+|Name      | Kamnee Maran                  |
+|Email     | kamneemaran45@gmail.com       |
+
 
 ### Software Required:
 Git, MySQL, NPM, Bower and NodeJS
