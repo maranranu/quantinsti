@@ -3,7 +3,6 @@
 //Import modules
 var mysql = require('mysql');
 var _ = require('underscore');
-var model = require('./model');
 var controller = {};
 
 //API to get data by instrument

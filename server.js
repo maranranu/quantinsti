@@ -28,6 +28,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static(__dirname + "/Public"));
 
+
 require('./routes')(app);
 
 //Routing

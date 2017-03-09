@@ -20,6 +20,7 @@
 
     <!-- SPELLS -->
     <script src="bower_components/angular/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
     <script src="app.js"></script>
 
 </head>
@@ -29,18 +30,19 @@
         <div class="jumbotron text-center">
             <h1>Application to check instrument status</h1>
         </div>
-        <!-- ORDER LIST -->
+        <div class="alert alert-success" ng-show="displaysuccess">
+          <strong>Success!</strong> Refreshing after 5 seconds</a>.
+        </div>
         <div id="orders" class="row">
+          Current Status of All instruments :
                 <!-- LOOP OVER THE orders IN $scope.orders -->
                   <ul>
                     <li ng-repeat="order in orders">
-                          <input type="text-center" value ="{{order.size}} units of an instrument with the id {{order.instrument}} was {{order.status}}">
-                        <!--  <button type="submit" class="btn btn-small btn-primary" ng-click="getStatusByID(order.instrument)">Instrument {{order.instrument}} data</button> -->
+                          <h4>Instrument ID :  {{order.instrument}}</h4>
+                          <p>{{order.size}} units of an instrument with the id {{order.instrument}} was {{order.status}}</p>
                     </li>
                   </ul>
         </div>
-
-        <!-- FORM TO STORE LINE  DATA -->
         <div id="order-form" class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
                 <form>
@@ -52,6 +54,25 @@
                     <button type="submit" class="btn btn-primary btn-lg" ng-click="storeOrder()">Save new order</button>
                 </form>
             </div>
+        </div>
+        <br />
+        <div id="instrument-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg text-center" placeholder="Enter Instrument ID" ng-model="formData.instrumentId">
+                    </div>
+                    <!-- showOrder() WILL save new entry into data after parsing line -->
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="getStatusByID(formData.instrumentId)">Display Instrument</button>
+                </form>
+            </div>
+        </div>
+        <div id="instrumentDetails" ng-if="instrumentDetails">
+          <ul>
+            <li ng-repeat="order in instrumentDetails">
+                  <p>{{order.size}} units of an instrument with the id {{order.instrument}} was {{order.status}}</p>
+            </li>
+          </ul>
         </div>
 </body>
 </html>
