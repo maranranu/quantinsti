@@ -9,7 +9,7 @@
 
 
 ### Software Required:
-Git, MySQL, NPM, Bower and NodeJS
+Git, [MySQL] (https://www.linode.com/docs/databases/mysql/install-mysql-on-ubuntu-14-04), [NPM-Bower] (http://stackoverflow.com/a/25478903) and [NodeJS] (http://stackoverflow.com/a/22791301)
 
 Platform: Linux (Ubuntu)
 
@@ -28,7 +28,7 @@ Installation
 
 * Run automated shell script and provide your mysql credential when prompted
 ```bash
-./run.sh
+sudo ./run.sh
 ```
 
 It will automatically do the following tasks
