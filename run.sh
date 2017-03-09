@@ -15,7 +15,7 @@ mysql -u $username -p$password quantinsti_assignment < quantinsti.sql
 
 echo "Installing client modules..."
 cd Public/
-bower install
+sudo bower install --allow-root
 
 cd ../
 echo "Installing server modules..."
